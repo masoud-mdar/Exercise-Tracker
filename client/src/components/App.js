@@ -7,7 +7,7 @@ import Add from "./Add"
 import Log from "./Log"
 import Result from "./Result"
 
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://exercise-tracker-msd.herokuapp.com"
 
 const App = () => {
     const [result, setResult] = useState([])
