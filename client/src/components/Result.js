@@ -7,16 +7,24 @@ const Result = (props) => {
         <div className="result">
         <button name="close" onClick={props.cleaner} className="close">X</button>
         <ul>
-        {props.result.map(item =>{
+        {props.result.map((item, d) =>{
             return (
                 <li key={Math.random()*Math.random()}>
                     <div className="res">
                         <h3>{item}</h3>
-                        {props.log.isNew || props.log.isAll ? (
+                        {props.log.isAll ? (
 
                             <CopyToClipboard text={item}>
                                 <span>copy</span>
                             </CopyToClipboard>
+                        ) : props.log.isNew ? (
+                            d === props.result.length -1 ? (
+                                <CopyToClipboard text={item}>
+                                    <span>copy</span>
+                                </CopyToClipboard>
+                            ) : (
+                                <div></div>
+                            )
                         ) : (
                             <div></div>
                         )}
